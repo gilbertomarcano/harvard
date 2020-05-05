@@ -13,7 +13,7 @@ The program we’ll write will be called mario. And let’s allow the user to de
 
 #include <stdio.h>
 
-#include "../cs50.h"
+#include "../../cs50.h"
 
 int main(void)
 {
@@ -23,7 +23,7 @@ int main(void)
         height = get_int("Height: ");
     }
     while (height < 1 || height > 8);
-    
+
 
     for (int i = 0; i < height; i++)
     {
@@ -40,4 +40,5 @@ int main(void)
         }
         printf("\n");
     }
+
 }
