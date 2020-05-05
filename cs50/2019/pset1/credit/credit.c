@@ -1,8 +1,8 @@
 /*
 
-In a file called credit.c in a ~/pset1/credit/ directory, write a program that 
+In a file called credit.c in a ~/pset1/credit/ directory, write a program that
 prompts the user for a credit card number and then reports (via printf) whether
-it is a valid American Express, MasterCard, or Visa card number, per the 
+it is a valid American Express, MasterCard, or Visa card number, per the
 definitions of each’s format herein. So that we can automate some tests of your
 code, we ask that your program’s last line of output be AMEX\n or MASTERCARD\n
 or VISA\n or INVALID\n, nothing more, nothing less. For simplicity, you may
@@ -30,8 +30,8 @@ Visa	            4222222222222
 int main(void)
 {
     // Prompt for the number.
-    //long number = get_long("Number: ");
-    long number = 4012888888881881;
+    long number = get_long("Number: ");
+
     if (number < 1)
     {
         // For zero and negative numbers.
@@ -55,14 +55,14 @@ int main(void)
             const char* arr = ltoa(number);
             for (unsigned int i = 0; i < length; i++)
             {
-                /* Get from last to first digit. 
+                /* Get from last to first digit.
                 Substract '0' to get its correspond integer value. */
                 unsigned char digit = arr[length - 1 - i] - '0';
 
                 if (i % 2)
                 {
-                    /* Multiply every other digit by 2, starting with the 
-                    number’s second-to-last digit, and then add those 
+                    /* Multiply every other digit by 2, starting with the
+                    number’s second-to-last digit, and then add those
                     products’ digits together. */
                     digit *= 2;
 
@@ -81,7 +81,7 @@ int main(void)
                     odd_sum += digit;
                 }
             }
-            /* Add the sum to the sum of the digits 
+            /* Add the sum to the sum of the digits
             that weren’t multiplied by 2. */
             int sum = even_sum + odd_sum;
             if (sum % 10)

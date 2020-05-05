@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-const char* get_string(const char* prompt)
+char* get_string(const char* prompt)
 {
     char buffer[256];
     printf("%s", prompt);
@@ -15,13 +15,10 @@ const char* get_string(const char* prompt)
     char* string = (char*) malloc(sizeof(char) * (strlen(buffer) + 1));
     strcpy(string, buffer);
 
-    // used to clear the buffer
-    // and accept the next string
-
     return string;
 }
 
-long get_long(const char* prompt)
+long get_long(const char*prompt)
 {
     while (1)
     {
